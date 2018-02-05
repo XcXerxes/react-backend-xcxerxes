@@ -288,17 +288,23 @@ const webpackConfig = {
       filename: cssFilename,
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'react',
+      name: 'vendor',
       minChunks: function (module) {
-        console.log(module.resource)
-        return module.resource && /cjs/.test(module.resource) 
+        return (
+          module.resource &&
+          /\.js$/.test(module.resource) &&
+          module.resource.indexOf(
+            path.join(__dirname, '../node_modules')
+          ) === 0
+        )
       }
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vnedor',
-      chunks: ['react'],
+      name: 'react',
+      chunks: ['vendor'],
       minChunks: function (module) {
-        return module.resource
+        console.log(module.resource)
+        return module.resource && /cjs/.test(module.resource) 
       }
     }),
     // Generate a manifest file which contains a mapping of all asset filenames
