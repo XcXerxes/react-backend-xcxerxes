@@ -55,7 +55,8 @@
       "src/**/*.{js,jsx,mjs}"
     ],
     "setupFiles": [
-      "<rootDir>/config/polyfills.js"
+      "<rootDir>/config/polyfills.js",
+      "<rootDir>/config/jest/enzymeConfig.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
@@ -103,6 +104,12 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "node-sass": "^4.7.2",
+    "react-test-renderer": "^16.2.0",
+    "sass-loader": "^6.0.6",
     "webpack-bundle-analyzer": "^2.10.0"
-  }
+  },
+  "proxy": "http://localhost:8888/"
 }

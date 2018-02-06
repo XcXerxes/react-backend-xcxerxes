@@ -1,0 +1,22 @@
+#root {
+  height: 100%;
+}
+.xcxerxes {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &.xcxerxes-home {
+    justify-content: center;
+    overflow: hidden;
+  }
+  .fill {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+}
