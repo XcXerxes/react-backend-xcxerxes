@@ -33,7 +33,7 @@ class LoginForm extends Component {
         <FormItem className="login-form__action">
           <Row type="flex" justify="space-around">
             <Col span={12}>
-              <Checkbox>记住我</Checkbox>
+              <Checkbox>自动登录</Checkbox>
             </Col>
             <Col span={12} style={{textAlign: 'right'}}>
               <a className="login-form-forgot" href="">忘记密码</a>

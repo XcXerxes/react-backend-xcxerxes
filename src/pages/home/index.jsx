@@ -19,6 +19,7 @@ class LoginHome extends Component {
       this.setState({loading: false})
       if (result.code === 200) {
         console.log('登录成功')
+        this.props.history.push('/users/list')
       }
     } catch (error) {
       this.setState({loading: false})
