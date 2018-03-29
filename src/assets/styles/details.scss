@@ -18,6 +18,12 @@
       margin: 0 0 0 10px;
       font-size: 18px;
       color: #fff;
+      opacity: 1;
+      transition: all .5s ease;
+      &.leave {
+        opacity: 0;
+        max-width: 0;
+      }
     }
   }
 }

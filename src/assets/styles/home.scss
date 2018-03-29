@@ -22,3 +22,21 @@
   border-radius: 5px;
   box-shadow: 2px 3px 2px 1px rgba(41, 41, 41, 0.27);
 }
+
+.ant-layout-header {
+  &.xcxerxes-header {
+    background-color: #fff;
+    padding: 0;
+    i {
+      font-size: 18px;
+      line-height: 64px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 24px;
+      transition: color .3s ease;
+      &:hover {
+        color: #1890ff;
+      }
+    }
+  }
+}

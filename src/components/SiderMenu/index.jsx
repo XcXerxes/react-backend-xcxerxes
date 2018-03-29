@@ -1,10 +1,11 @@
 import React, {PureComponent} from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import {Layout, Menu, Icon} from 'antd'
 const {Sider} = Layout
 const { SubMenu} = Menu
 
-export default class SiderMenu extends PureComponent {
+class SiderMenu extends PureComponent {
   constructor(props) {
     super(props)
     this.menus = props.menuData
@@ -57,13 +58,14 @@ export default class SiderMenu extends PureComponent {
         collapsible
         breakpoint="lg"
         width={200}
+        collapsed={this.props.collapsed}
         className="main-sider"
         
       >
         <div className="xcxerxes-menu__logo">
           <Link to="/">
             <img src={logo} alt=""/>
-            <h1>博客管理系统</h1>
+            <h1 className={this.props.collapsed ? 'leave' : ''}>博客管理系统</h1>
           </Link>
         </div>
         <Menu
@@ -78,3 +80,7 @@ export default class SiderMenu extends PureComponent {
     )
   }
 }
+
+export default connect(state => ({
+  collapsed: state.menus.collapsed
+}))(SiderMenu)
